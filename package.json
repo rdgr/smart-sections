@@ -1,0 +1,10 @@
+{
+  "name": "smart-sections",
+  "version": "0.0.1",
+  "description": "Framework agnostic, vertical scroll solution that follows what you actually read",
+  "main": "src/index.js",
+  "repository": "git@github.com:netguru/smart-sections.git",
+  "author": "Maciej Myśliński <hello@maciejmyslinski.com> (https://maciejmyslinski.com)",
+  "license": "MIT",
+  "private": false
+}
