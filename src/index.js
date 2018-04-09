@@ -10,7 +10,10 @@ export const spy = {
   scrollHandler: () => {
     const recalculatedSections = recalculate(sections);
     Object.keys(sections).forEach(sectionName => {
-      if (sectionCallbacks.get(sectionName).size) {
+      if (
+        sectionCallbacks.get(sectionName) &&
+        sectionCallbacks.get(sectionName).size
+      ) {
         sectionCallbacks.get(sectionName).forEach(callback => {
           if (typeof callback === 'function') {
             const sectionState = recalculatedSections.find(
@@ -39,7 +42,7 @@ export const spy = {
   },
 
   unregisterSectionSpy: (sectionName, callback) => {
-    if (sectionCallbacks.has(sectionName).size) {
+    if (sectionCallbacks.has(sectionName)) {
       sectionCallbacks.get(sectionName).delete(callback);
     }
   },
