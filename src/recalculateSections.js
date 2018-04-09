@@ -45,7 +45,8 @@ export function recalculateSections(
         if (e && typeof e.preventDefault === 'function') e.preventDefault();
         window.scrollTo(0, yScrollPoint);
       },
-      active
+      active,
+      yScrollPoint
     };
   });
 }
