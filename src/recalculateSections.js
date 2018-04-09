@@ -1,4 +1,4 @@
-import { calculateScrollPoint } from "./calculateScrollPoint";
+import { calculateScrollPoint } from './calculateScrollPoint';
 
 export function recalculateSections(
   coordinates,
@@ -41,7 +41,8 @@ export function recalculateSections(
     const yScrollPoint = calculateScrollPoint(sections, sectionName);
     return {
       name: sectionName,
-      scroll: () => {
+      scroll: e => {
+        if (e && typeof e.preventDefault === 'function') e.preventDefault();
         window.scrollTo(0, yScrollPoint);
       },
       active
