@@ -1,6 +1,6 @@
 {
   "name": "smart-sections",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Framework agnostic, vertical scroll solution that follows what you actually read",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.es.js",
