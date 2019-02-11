@@ -1,14 +1,14 @@
-const html = document.documentElement;
-const body = document.body;
-export const getScrollTop = () => document.scrollingElement.scrollTop;
-export const getViewportHeight = () => window.innerHeight;
+const html = typeof document !== 'undefined' ? document.documentElement: null;
+const body = typeof document !== 'undefined' ? document.body : null;
+export const getScrollTop = () => typeof document !== 'undefined' ? document.scrollingElement.scrollTop : 0;
+export const getViewportHeight = () => typeof window !== 'undefined' ? window.innerHeight : 0;
 export const getDocumentHeight = () =>
   Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.clientHeight,
-    html.scrollHeight,
-    html.offsetHeight
+    body ? body.scrollHeight : 0,
+    body ? body.offsetHeight : 0,
+    html ? html.clientHeight : 0,
+    html ? html.scrollHeight : 0,
+    html ? html.offsetHeight : 0
   );
 export const getScrollBottom = () =>
   getDocumentHeight() - getViewportHeight() - getScrollTop();
